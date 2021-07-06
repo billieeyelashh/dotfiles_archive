@@ -1,6 +1,7 @@
 "Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
+set number
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -30,19 +31,24 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 Plug 'nvim-treesitter/highlight.lua'
 
-
+"Rust Plugins
+Plug 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 " Initialize plugin system
+" colorscheme
+Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 
 
 " === Theme ===
 
 syntax on
-colorscheme onedark
+colorscheme palenight
 autocmd VimEnter * NERDTree
 
+"Coc Config
