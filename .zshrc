@@ -107,3 +107,4 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /home/jule/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ulimit -s unlimited
